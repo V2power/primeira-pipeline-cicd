@@ -15,3 +15,12 @@ jobs:
         with:
           username: ${{ vars.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: "Build da imagem Docker"
+        uses: docker/build-push-action@v7
+        with:
+          context: ./src
+          file: ./src/Dockerfile
+          push: true
+          tags: |
+            v2power/primeira-pipeline:v${{ github.run_number }}
+            v2power/primeira-pipeline:latest
