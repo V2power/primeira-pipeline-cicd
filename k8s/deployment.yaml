@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: web
-        image: v2power/primeira-pipeline
+        image: v2power/primeira-pipeline:latest
         ports:
         - containerPort: 5000
 --- 
